@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b3028">
+  <title>GİZ GURME CMS</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script src="config.js"></script>
+</head>
+<body>
+<header>
+  <div>
+    <div class="brand">GİZ GURME</div>
+    <div class="subtitle">Menü ve Reçete Yönetimi</div>
+  </div>
+  <button id="modeBtn" class="ghost">Müşteri Menüsü</button>
+</header>
+<main>
+  <div id="setupWarning" class="warning" hidden>
+    Supabase bilgileri config.js dosyasına eklenmedi.
+  </div>
+
+  <section id="adminView">
+    <div class="toolbar">
+      <input id="search" placeholder="Ürün ara">
+      <select id="categoryFilter"><option value="">Tüm kategoriler</option></select>
+      <button id="addBtn">+ Ürün Ekle</button>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div id="adminList" class="cards"></div>
+  </section>
+
+  <section id="customerView" hidden>
+    <div class="hero"><h1>GİZ GURME</h1><p>Menü</p></div>
+    <div id="categoryTabs" class="tabs"></div>
+    <div id="menuList" class="menu-list"></div>
+    <div class="qrbox">
+      <h3>Menüyü paylaş</h3>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+  </section>
+</main>
+
+<dialog id="editor">
+  <form id="editorForm">
+    <h2 id="editorTitle">Ürün</h2>
+    <input type="hidden" id="productId">
+    <label>Ürün adı<input id="name" required></label>
+    <label>Kategori<select id="category" required></select></label>
+    <label>Menü sırası<input id="menuOrder" type="number" min="1" required></label>
+    <label>Kısa açıklama<textarea id="description" rows="3"></textarea></label>
+    <label>Reçete<textarea id="recipe" rows="8"></textarea></label>
+    <label>Alerjenler<input id="allergens" placeholder="Gluten, süt, yumurta..."></label>
+    <label>Fotoğraf URL<input id="photoUrl" type="url" placeholder="https://..."></label>
+    <label>Durum<select id="status"><option value="active">Aktif</option><option value="inactive">Pasif</option></select></label>
+    <div class="dialog-actions">
+      <button type="button" id="deleteBtn" class="danger">Sil</button>
+      <button type="button" id="cancelBtn" class="ghost dark">Vazgeç</button>
+      <button type="submit">Kaydet</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

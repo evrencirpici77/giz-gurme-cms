@@ -1,0 +1,9 @@
+{
+  "name": "GİZ GURME CMS",
+  "short_name": "GİZ GURME",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f1e5",
+  "theme_color": "#0b3028",
+  "icons": []
+}
