@@ -1,5 +1,5 @@
 // Supabase proje bilgilerini buraya yazın.
 window.GIZ_CONFIG = {
-  SUPABASE_URL: "BURAYA_SUPABASE_PROJECT_URL",
-  SUPABASE_ANON_KEY: "BURAYA_SUPABASE_ANON_KEY"
+  SUPABASE_URL: "https://wtgnuftzafzkfrkkazyt.supabase.co"
+  sb_publishable_V6QB0Q3HlP8j6UnTt8_bPQ_XcjEyKlQ
 };
